@@ -7,7 +7,7 @@
     <dt>AX Responses</dt>
     <dd>
       <dl>
-        <%= response.ax_response.data.each do |type_url, values| %>
+        <% response.ax_response.data.each do |type_url, values| %>
           <dt><%= OpenId::ATTRIBUTES.invert[type_url] %></dt>
           <% values.each do |value| %>
             <dd><%= value %></dd>

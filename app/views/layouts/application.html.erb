@@ -10,5 +10,25 @@
 <body>
   <h1>OpenID Sample</h1>
   <%= yield %>
+  <script>
+    $(function () {
+      $('a.popup').click(function () {
+        var width = $(this).attr('data-width') || 450;
+        var height = $(this).attr('data-height') || 500;
+        var left = (screen.availWidth - width) / 2;
+        var top = (screen.availHeight - height) / 2;
+        left = left < 0 ? 0 : left;
+        top = top < 0 ? 0 : top;
+        var login_window = window.open(
+          this.href,
+          'login_window',
+          "height=" + height + ",width=" + width + ",left=" + left + ",top=" + top + ",resizable=yes"
+        );
+        login_window.opener = window;
+        login_window.focus();
+        return false;
+      });
+    });
+  </script>
 </body>
 </html>

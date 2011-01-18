@@ -4,24 +4,3 @@
   <li><%= link_to 'Yahoo!', open_id_path(:id => 'yahoo', :ui => true), :class => :popup, :'data-width' => 500 %></li>
   <li><%= link_to 'Yahoo! Japan', open_id_path(:id => 'yahoo_japan', :ui => true), :class => :popup, :'data-width' => 523, :'data-height' => 550 %></li>
 </ul>
-
-<script>
-  $(function () {
-    $('a.popup').click(function () {
-      var width = $(this).attr('data-width') || 450;
-      var height = $(this).attr('data-height') || 500;
-      var left = (screen.availWidth - width) / 2;
-      var top = (screen.availHeight - height) / 2;
-      left = left < 0 ? 0 : left;
-      top = top < 0 ? 0 : top;
-      var login_window = window.open(
-        this.href,
-        'login_window',
-        "height=" + height + ",width=" + width + ",left=" + left + ",top=" + top + ",resizable=yes"
-      );
-      login_window.opener = window;
-      login_window.focus();
-      return false;
-    });
-  });
-</script>
