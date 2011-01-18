@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xrds:XRDS xmlns:xrds="xri://$xrds" xmlns:openid="http://openid.net/xmlns/1.0" xmlns="xri://$xrd*($v*2.0)">
+  <XRD>
+    <Service priority="0">
+      <Type>http://specs.openid.net/auth/2.0/return_to</Type>
+      <URI><%= open_ids_url -%></URI>
+    </Service>
+    <Service priority="10">
+      <Type>http://specs.openid.net/extensions/ui/icon</Type>
+      <URI><%= File.join(root_url, 'favicon.ico') %></URI>
+    </Service>
+  </XRD>
+</xrds:XRDS>

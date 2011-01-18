@@ -1,0 +1,8 @@
+<script>
+  if (window.opener) {
+    window.opener.location.href = "<%= @redirect_uri %>";
+    window.close();
+  } else {
+    location.href = "<%= @redirect_uri %>";
+  }
+</script>

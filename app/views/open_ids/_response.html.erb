@@ -1,0 +1,19 @@
+<dl>
+  <dt>Identifeir</dt>
+  <dd><%= response.identifier %></dd>
+  <dt>Display Identifier</dt>
+  <dd><%= response.display_identifier %></dd>
+  <% if response.ax_response %>
+    <dt>AX Responses</dt>
+    <dd>
+      <dl>
+        <%= response.ax_response.data.each do |type_url, values| %>
+          <dt><%= OpenId::ATTRIBUTES.invert[type_url] %></dt>
+          <% values.each do |value| %>
+            <dd><%= value %></dd>
+          <% end %>
+        <% end %>
+      </dl>
+    </dt>
+  <% end %>
+</dl>
